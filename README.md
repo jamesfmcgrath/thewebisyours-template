@@ -6,7 +6,7 @@ A free one-page website template for small businesses. Part of the [The Web Is Y
 
 ## What This Is
 
-A single HTML file. No build tools. No frameworks. No dependencies beyond Google Fonts. Drop it in a repo, connect to Cloudflare Pages, point a domain at it, and a business has a real website in under an hour.
+A single HTML file. No build tools. No frameworks. No external dependencies — no Google Fonts, no tracking, no third-party requests. Drop it in a repo, connect to Cloudflare Pages, point a domain at it, and a business has a real website in under an hour.
 
 ---
 
@@ -18,7 +18,7 @@ Small local businesses that only exist on social media — a café, a trades per
 - An about section with space for a photo
 - A services section with cards
 - Opening hours
-- Location with Google Maps embed
+- Location with directions link — no Google account required
 - Contact details — phone, email, social links
 - Mobile responsive with hamburger nav
 - Scroll animations
@@ -61,7 +61,7 @@ Replace all placeholder text throughout the file. Every section is clearly comme
 - Services — rename, add, or remove cards
 - Opening hours
 - Address
-- Google Maps embed (instructions in the file)
+- Directions URL — update the link in the Location section
 - Contact details — phone, email, social links
 - Footer
 
@@ -75,15 +75,25 @@ In the About section, replace the placeholder div with a real image:
 
 Recommended size: 800×600px. Keep file size under 300kb — use [squoosh.app](https://squoosh.app) to compress.
 
-### 5. Add a Google Maps embed
+### 5. Update the directions link
 
-1. Go to [maps.google.com](https://maps.google.com)
-2. Search for the business address
-3. Click **Share** → **Embed a map**
-4. Copy the `<iframe>` code
-5. Paste it inside the `.location-map` div
+Find `<a class="directions-link">` in the Location section and update the `href` to the real address:
 
-### 6. Deploy to Cloudflare Pages
+```html
+<a class="directions-link" href="https://maps.google.com/?q=YOUR+ADDRESS+HERE" ...>
+```
+
+No Google account or embed code needed — it just opens Google Maps in a new tab.
+
+### 6. Replace the favicon
+
+`favicon.svg` is a placeholder lettermark. Replace it with the business initial or a simple logo:
+
+- Keep it as an SVG for best results
+- The `viewBox="0 0 32 32"` gives you a 32×32 canvas
+- Update `fill="#863d17"` to match the brand colour
+
+### 7. Deploy to Cloudflare Pages
 
 1. Push to a GitHub repo
 2. Log into [Cloudflare Dashboard](https://dash.cloudflare.com)
@@ -97,15 +107,39 @@ Done. The site is live, fast, and free to host.
 
 ---
 
+## Local Development
+
+DDEV works well for previewing changes locally with HTTPS:
+
+```bash
+ddev start
+ddev launch
+```
+
+The `.ddev/` folder is gitignored — set it up locally with:
+
+```bash
+ddev config --project-name=your-project-name --project-type=php --docroot=.
+```
+
+---
+
 ## Files
 
 ```
 thewebisyours-template/
-├── index.html   # The entire website — edit this
-└── README.md    # This file
+├── index.html          # The entire website — edit this
+├── favicon.svg         # Site icon — replace with business initial or logo
+├── css/
+│   └── style.css       # All styles — colour variables at the top
+├── fonts/              # Self-hosted Lora WOFF2 files (see Fonts section below)
+│   ├── lora-v37-latin-regular.woff2
+│   ├── lora-v37-latin-italic.woff2
+│   └── lora-v37-latin-600.woff2
+├── js/
+│   └── script.js       # Scroll animations and mobile nav toggle
+└── README.md
 ```
-
-That's it. One file.
 
 ---
 

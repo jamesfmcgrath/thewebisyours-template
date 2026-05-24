@@ -36,8 +36,8 @@
       --surface:    #fff9f2;   /* Card / section background */
       --ink:        #1c1712;   /* Main text */
       --mid:        #5c5248;   /* Secondary text */
-      --light:      #9c8f84;   /* Muted text, borders */
-      --accent:     #c4622d;   /* Brand colour — buttons, highlights */
+      --light:      #7a6d62;   /* Muted text, borders */
+      --accent:     #863d17;   /* Brand colour — buttons, highlights */
       --accent-bg:  #f0e0d6;   /* Light tint of accent */
       --border:     #e8ddd5;   /* Dividers */
     }
@@ -148,11 +148,10 @@
 
     .hero-tag {
       display: inline-block;
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
+      letter-spacing: 0.04em;
+      color: var(--ink);
       background: var(--accent-bg);
       padding: 0.3rem 0.85rem;
       border-radius: 100px;
@@ -163,7 +162,7 @@
       font-family: 'Lora', serif;
       font-size: clamp(2.5rem, 6vw, 5rem);
       font-weight: 600;
-      line-height: 1.1;
+      line-height: 1.2;
       letter-spacing: -0.02em;
       margin-bottom: 1.5rem;
     }
@@ -226,15 +225,15 @@
     }
 
     .section-eyebrow {
-      font-size: 0.72rem;
+      font-size: 0.85rem;
       font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+      letter-spacing: 0.04em;
       color: var(--accent);
+      line-height: 1.5;
       margin-bottom: 1rem;
     }
 
-    .about h2 {
+    .about h3 {
       font-family: 'Lora', serif;
       font-size: clamp(1.6rem, 3vw, 2.4rem);
       font-weight: 600;
@@ -271,7 +270,7 @@
     .services { padding: 5rem 2rem; }
     .services-inner { max-width: 900px; margin: 0 auto; }
 
-    .services h2 {
+    .services h3 {
       font-family: 'Lora', serif;
       font-size: clamp(1.6rem, 3vw, 2.4rem);
       font-weight: 600;
@@ -333,7 +332,7 @@
 
     .info-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
 
-    .info h2 {
+    .info h3 {
       font-family: 'Lora', serif;
       font-size: 1.5rem;
       font-weight: 600;
@@ -354,7 +353,7 @@
     .hours-list li:last-child { border-bottom: none; }
     .hours-list .day { color: var(--mid); }
     .hours-list .time { font-weight: 500; color: var(--ink); }
-    .hours-list .closed { color: var(--light); font-weight: 400; }
+    .hours-list .closed { color: var(--mid); font-weight: 400; }
 
     .location-address { font-size: 0.95rem; color: var(--mid); line-height: 1.8; margin-bottom: 1.25rem; }
 
@@ -379,7 +378,7 @@
 
     .contact-inner { max-width: 580px; margin: 0 auto; text-align: center; }
 
-    .contact h2 {
+    .contact h3 {
       font-family: 'Lora', serif;
       font-size: clamp(1.8rem, 3vw, 2.6rem);
       font-weight: 600;
@@ -420,9 +419,8 @@
       display: block;
       font-size: 0.78rem;
       font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--light);
+      letter-spacing: 0.02em;
+      color: var(--mid);
       margin-bottom: 0.15rem;
     }
 
@@ -442,9 +440,9 @@
     }
 
     .footer-name { font-family: 'Lora', serif; font-size: 0.95rem; font-weight: 600; }
-    footer p { font-size: 0.75rem; color: var(--light); }
+    footer p { font-size: 0.75rem; color: var(--mid); line-height: 1.5; }
 
-    .footer-credit { font-size: 0.72rem; color: var(--light); text-decoration: none; }
+    .footer-credit { font-size: 0.72rem; color: var(--mid); text-decoration: none; }
     .footer-credit:hover { color: var(--accent); }
 
     /* ============================================================
@@ -497,7 +495,8 @@
     </nav>
   </header>
 
-  <section class="hero" id="home">
+  <main>
+  <section class="hero" id="home" aria-label="Introduction">
     <div class="hero-inner">
       <span class="hero-tag">Westport, Co. Mayo</span>
       <h1>Fresh from the oven,<br><em>every morning.</em></h1>
@@ -509,11 +508,11 @@
     </div>
   </section>
 
-  <section class="about fade-in" id="about">
+  <section class="about fade-in" id="about" aria-label="About">
     <div class="about-inner">
       <div class="about-text">
-        <p class="section-eyebrow">About Us</p>
-        <h2>A family bakery in the heart of Westport.</h2>
+        <h2 class="section-eyebrow">About Us</h2>
+        <h3>A family bakery in the heart of Westport.</h3>
         <p>The Harbour Bakery started as a market stall in 2009. Fifteen years later we're still baking everything by hand, still using local flour, and still opening the doors at half seven every morning.</p>
         <p>We believe good bread shouldn't be complicated. Just good ingredients, time, and a hot oven. Come in and see for yourself.</p>
       </div>
@@ -524,10 +523,10 @@
     </div>
   </section>
 
-  <section class="services fade-in" id="services">
+  <section class="services fade-in" id="services" aria-label="Services">
     <div class="services-inner">
-      <p class="section-eyebrow">What We Bake</p>
-      <h2>Made fresh every morning.</h2>
+      <h2 class="section-eyebrow">What We Bake</h2>
+      <h3>Made fresh every morning.</h3>
       <div class="services-grid">
 
         <div class="service-card">
@@ -552,12 +551,12 @@
     </div>
   </section>
 
-  <section class="info fade-in" id="hours">
+  <section class="info fade-in" id="hours" aria-label="Hours and location">
     <div class="info-inner">
 
       <div class="hours">
-        <p class="section-eyebrow">Opening Hours</p>
-        <h2>When We're Open</h2>
+        <h2 class="section-eyebrow">Opening Hours</h2>
+        <h3>When We're Open</h3>
         <ul class="hours-list">
           <li><span class="day">Monday</span>    <span class="time">7:30 – 17:00</span></li>
           <li><span class="day">Tuesday</span>   <span class="time">7:30 – 17:00</span></li>
@@ -570,8 +569,8 @@
       </div>
 
       <div class="location">
-        <p class="section-eyebrow">Location</p>
-        <h2>Find Us</h2>
+        <h2 class="section-eyebrow">Location</h2>
+        <h3>Find Us</h3>
         <p class="location-address">
           12 Bridge Street<br>
           Westport<br>
@@ -592,10 +591,10 @@
     </div>
   </section>
 
-  <section class="contact fade-in" id="contact">
+  <section class="contact fade-in" id="contact" aria-label="Contact">
     <div class="contact-inner">
-      <p class="section-eyebrow">Contact</p>
-      <h2>Get in Touch</h2>
+      <h2 class="section-eyebrow">Contact</h2>
+      <h3>Get in Touch</h3>
       <p class="contact-sub">Questions about orders or just want to say hello? We're here.</p>
 
       <div class="contact-methods">
@@ -630,6 +629,8 @@
 
     </div>
   </section>
+
+  </main>
 
   <footer>
     <div>

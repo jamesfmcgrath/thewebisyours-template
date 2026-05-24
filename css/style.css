@@ -142,7 +142,7 @@ nav a:hover { color: var(--accent); }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 2rem 4rem;
+  padding: 5rem 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -157,7 +157,7 @@ nav a:hover { color: var(--accent); }
   pointer-events: none;
 }
 
-.hero-inner { max-width: 720px; position: relative; }
+.hero-inner { max-width: 900px; width: 100%; margin: 0 auto; position: relative; }
 
 .hero-tag {
   display: inline-block;
@@ -239,20 +239,21 @@ nav a:hover { color: var(--accent); }
 }
 
 .section-eyebrow {
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--accent);
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
-
-.about h3 {
   font-family: 'Lora', serif;
   font-size: clamp(1.6rem, 3vw, 2.4rem);
   font-weight: 600;
-  line-height: 1.2;
   letter-spacing: -0.02em;
+  color: var(--accent);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.about h3 {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--mid);
+  line-height: 1.5;
   margin-bottom: 1.25rem;
 }
 
@@ -285,10 +286,10 @@ p.image-placeholder {
 .services-inner { max-width: 900px; margin: 0 auto; }
 
 .services h3 {
-  font-family: 'Lora', serif;
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--mid);
   margin-bottom: 3rem;
 }
 
@@ -347,10 +348,10 @@ p.image-placeholder {
 .info-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
 
 .info h3 {
-  font-family: 'Lora', serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--mid);
   margin-bottom: 1.5rem;
 }
 
@@ -412,10 +413,10 @@ p.image-placeholder {
 .contact-inner { max-width: 580px; margin: 0 auto; text-align: center; }
 
 .contact h3 {
-  font-family: 'Lora', serif;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--mid);
   margin-bottom: 1rem;
 }
 

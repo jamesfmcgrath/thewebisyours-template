@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ============================================================
+    THE WEB IS YOURS — One Page Business Template
+    thewebisyours.org
+
+    HOW TO CUSTOMISE:
+    1. Find ":root" in the CSS and swap the four colour variables
+    2. Replace all placeholder text with the real business content
+    3. Add a real photo in the About section
+    4. Paste a Google Maps iframe in the Location section
+    5. Deploy to Cloudflare Pages
+
+    That's it.
+  ============================================================ -->
+
+  <title>The Harbour Bakery | Westport, Co. Mayo</title>
+  <meta name="description" content="Fresh bread, pastries and coffee in the heart of Westport. Baked every morning since 2009.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ============================================================
+       COLOURS — change these four variables to reskin the whole site
+       Use coolors.co to find a palette that fits the business
+    ============================================================ */
+    :root {
+      --bg:         #faf6f0;   /* Page background */
+      --surface:    #fff9f2;   /* Card / section background */
+      --ink:        #1c1712;   /* Main text */
+      --mid:        #5c5248;   /* Secondary text */
+      --light:      #9c8f84;   /* Muted text, borders */
+      --accent:     #c4622d;   /* Brand colour — buttons, highlights */
+      --accent-bg:  #f0e0d6;   /* Light tint of accent */
+      --border:     #e8ddd5;   /* Dividers */
+    }
+
+    /* ============================================================
+       BASE
+    ============================================================ */
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; }
+
+    /* ============================================================
+       HEADER / NAV
+    ============================================================ */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .site-name {
+      font-family: 'Lora', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    nav { display: flex; gap: 1.75rem; align-items: center; }
+
+    nav a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: white !important;
+      padding: 0.5rem 1.1rem;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.15s !important;
+    }
+
+    .nav-cta:hover {
+      background: color-mix(in srgb, var(--accent) 85%, black) !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.25rem;
+      color: var(--ink);
+    }
+
+    .nav-toggle svg { width: 22px; height: 22px; }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%; right: -15%;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-bg) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-inner { max-width: 720px; position: relative; }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-bg);
+      padding: 0.3rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em { font-style: italic; color: var(--accent); }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--mid);
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+      line-height: 1.75;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary { background: var(--accent); color: white; }
+
+    .btn-primary:hover {
+      background: color-mix(in srgb, var(--accent) 85%, black);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ============================================================
+       ABOUT
+    ============================================================ */
+    .about {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 5rem 2rem;
+    }
+
+    .about-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .section-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .about h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .about p { color: var(--mid); line-height: 1.8; margin-bottom: 1rem; }
+
+    .about-image {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--accent-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-image img { width: 100%; height: 100%; object-fit: cover; }
+
+    .image-placeholder {
+      font-size: 0.8rem;
+      color: var(--light);
+      text-align: center;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       SERVICES
+    ============================================================ */
+    .services { padding: 5rem 2rem; }
+    .services-inner { max-width: 900px; margin: 0 auto; }
+
+    .services h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.75rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.07); }
+    .service-card:hover::after { transform: scaleX(1); }
+
+    .service-icon { font-size: 1.75rem; margin-bottom: 1rem; }
+
+    .service-card h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+
+    .service-card p { font-size: 0.88rem; color: var(--mid); line-height: 1.7; }
+
+    /* ============================================================
+       HOURS & LOCATION
+    ============================================================ */
+    .info {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 5rem 2rem;
+    }
+
+    .info-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+
+    .info h2 {
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hours-list { list-style: none; }
+
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .hours-list li:last-child { border-bottom: none; }
+    .hours-list .day { color: var(--mid); }
+    .hours-list .time { font-weight: 500; color: var(--ink); }
+    .hours-list .closed { color: var(--light); font-weight: 400; }
+
+    .location-address { font-size: 0.95rem; color: var(--mid); line-height: 1.8; margin-bottom: 1.25rem; }
+
+    .location-map {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin-top: 1rem;
+      aspect-ratio: 16/9;
+      background: var(--accent-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .location-map iframe { width: 100%; height: 100%; border: none; }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    .contact { padding: 5rem 2rem; }
+
+    .contact-inner { max-width: 580px; margin: 0 auto; text-align: center; }
+
+    .contact h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .contact-sub { font-size: 1rem; color: var(--mid); margin-bottom: 2.5rem; line-height: 1.75; }
+
+    .contact-methods { display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 2.5rem; text-align: left; }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    .contact-method:hover { border-color: var(--accent); transform: translateX(3px); }
+
+    .contact-method-icon {
+      font-size: 1.3rem;
+      width: 40px; height: 40px;
+      background: var(--accent-bg);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-method-text strong {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-method-text span { font-size: 0.95rem; color: var(--ink); font-weight: 400; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-name { font-family: 'Lora', serif; font-size: 0.95rem; font-weight: 600; }
+    footer p { font-size: 0.75rem; color: var(--light); }
+
+    .footer-credit { font-size: 0.72rem; color: var(--light); text-decoration: none; }
+    .footer-credit:hover { color: var(--accent); }
+
+    /* ============================================================
+       ANIMATIONS
+    ============================================================ */
+    .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 700px) {
+      header { padding: 1rem 1.5rem; }
+      nav { display: none; flex-direction: column; gap: 1rem; }
+      nav.open {
+        display: flex;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        padding: 1.5rem 2rem;
+      }
+      .nav-toggle { display: block; }
+      .hero { min-height: 70vh; padding: 3rem 1.5rem; }
+      .hero::before { display: none; }
+      .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .about-image { order: -1; }
+      .info-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .services, .about, .info, .contact { padding: 3rem 1.5rem; }
+      footer { flex-direction: column; align-items: flex-start; padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="site-name" href="#">The Harbour Bakery</a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleNav()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+    <nav id="main-nav">
+      <a href="#about">About</a>
+      <a href="#services">What We Bake</a>
+      <a href="#hours">Hours</a>
+      <a href="#contact" class="nav-cta">Find Us</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <span class="hero-tag">Westport, Co. Mayo</span>
+      <h1>Fresh from the oven,<br><em>every morning.</em></h1>
+      <p class="hero-sub">We've been baking bread, pastries, and sourdough in the heart of Westport since 2009. Everything made by hand. Nothing from a packet.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Find Us</a>
+        <a href="#services" class="btn btn-outline">What We Bake</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about fade-in" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <p class="section-eyebrow">About Us</p>
+        <h2>A family bakery in the heart of Westport.</h2>
+        <p>The Harbour Bakery started as a market stall in 2009. Fifteen years later we're still baking everything by hand, still using local flour, and still opening the doors at half seven every morning.</p>
+        <p>We believe good bread shouldn't be complicated. Just good ingredients, time, and a hot oven. Come in and see for yourself.</p>
+      </div>
+      <div class="about-image">
+        <!-- Replace with: <img src="photo.jpg" alt="Inside The Harbour Bakery"> -->
+        <p class="image-placeholder">Add a photo here<br><small>Recommended: 800×600px</small></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services fade-in" id="services">
+    <div class="services-inner">
+      <p class="section-eyebrow">What We Bake</p>
+      <h2>Made fresh every morning.</h2>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon">🍞</div>
+          <h3>Sourdough & Breads</h3>
+          <p>Our sourdough starter is twelve years old. White, seeded, rye, and wholemeal loaves baked fresh every morning.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🥐</div>
+          <h3>Pastries</h3>
+          <p>Croissants, pain au chocolat, scones, and seasonal specials. Made in small batches so they sell out while they're still warm.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">☕</div>
+          <h3>Coffee & Treats</h3>
+          <p>Proper coffee, homemade cakes, and a quiet corner to sit in. We're a bakery but we won't rush you out the door.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="info fade-in" id="hours">
+    <div class="info-inner">
+
+      <div class="hours">
+        <p class="section-eyebrow">Opening Hours</p>
+        <h2>When We're Open</h2>
+        <ul class="hours-list">
+          <li><span class="day">Monday</span>    <span class="time">7:30 – 17:00</span></li>
+          <li><span class="day">Tuesday</span>   <span class="time">7:30 – 17:00</span></li>
+          <li><span class="day">Wednesday</span> <span class="time">7:30 – 17:00</span></li>
+          <li><span class="day">Thursday</span>  <span class="time">7:30 – 17:00</span></li>
+          <li><span class="day">Friday</span>    <span class="time">7:30 – 17:00</span></li>
+          <li><span class="day">Saturday</span>  <span class="time">8:00 – 15:00</span></li>
+          <li><span class="day">Sunday</span>    <span class="closed">Closed</span></li>
+        </ul>
+      </div>
+
+      <div class="location">
+        <p class="section-eyebrow">Location</p>
+        <h2>Find Us</h2>
+        <p class="location-address">
+          12 Bridge Street<br>
+          Westport<br>
+          Co. Mayo, F28 XY12
+        </p>
+        <div class="location-map">
+          <!--
+            To add a Google Map:
+            1. Go to maps.google.com
+            2. Search for the business address
+            3. Click Share > Embed a map
+            4. Copy the iframe and paste it here
+          -->
+          <p style="font-size:0.8rem;color:var(--light);padding:2rem;text-align:center;">Add Google Maps embed here</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="contact fade-in" id="contact">
+    <div class="contact-inner">
+      <p class="section-eyebrow">Contact</p>
+      <h2>Get in Touch</h2>
+      <p class="contact-sub">Questions about orders or just want to say hello? We're here.</p>
+
+      <div class="contact-methods">
+
+        <a class="contact-method" href="tel:+35398123456">
+          <div class="contact-method-icon">📞</div>
+          <div class="contact-method-text">
+            <strong>Phone</strong>
+            <span>098 123 456</span>
+          </div>
+        </a>
+
+        <a class="contact-method" href="mailto:hello@harbourbakery.ie">
+          <div class="contact-method-icon">✉️</div>
+          <div class="contact-method-text">
+            <strong>Email</strong>
+            <span>hello@harbourbakery.ie</span>
+          </div>
+        </a>
+
+        <a class="contact-method" href="https://instagram.com/harbourbakerywestport" target="_blank" rel="noopener">
+          <div class="contact-method-icon">📷</div>
+          <div class="contact-method-text">
+            <strong>Instagram</strong>
+            <span>@harbourbakerywestport</span>
+          </div>
+        </a>
+
+      </div>
+
+      <a href="tel:+35398123456" class="btn btn-primary">Call Us</a>
+
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <p class="footer-name">The Harbour Bakery</p>
+      <p>Westport · Co. Mayo</p>
+    </div>
+    <a class="footer-credit" href="https://thewebisyours.org" target="_blank" rel="noopener">
+      A free website by The Web Is Yours
+    </a>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('main-nav').classList.toggle('open');
+    }
+
+    document.querySelectorAll('#main-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('main-nav').classList.remove('open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

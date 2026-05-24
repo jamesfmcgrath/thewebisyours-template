@@ -109,6 +109,26 @@ That's it. One file.
 
 ---
 
+## Fonts
+
+Headings use self-hosted Lora (serif). Download the three WOFF2 files from:
+https://gwfh.mranftl.com/fonts/lora
+
+Select: Regular 400, Regular 400 Italic, SemiBold 600
+
+Place them in a `/fonts/` folder in the repo root:
+
+```
+fonts/
+├── lora-v37-latin-regular.woff2
+├── lora-v37-latin-italic.woff2
+└── lora-v37-latin-600.woff2
+```
+
+Body text uses the device system font — no download required, no external requests.
+
+---
+
 ## Part of The Web Is Yours Campaign
 
 This template is used by volunteer web developers as part of [The Web Is Yours](https://thewebisyours.org) — a grassroots campaign giving free one-page websites to small businesses that only exist on social media.

@@ -1,3 +1,35 @@
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/lora-v37-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/lora-v37-latin-600.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/lora-v37-latin-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/*
+  FONTS
+  Lora (serif) — self-hosted, used for headings only
+  Download WOFF2 files from https://gwfh.mranftl.com/fonts/lora
+  Select: Regular 400, Regular 400 Italic, SemiBold 600
+  Place the three .woff2 files in a /fonts/ folder in this repo
+
+  Body text uses the device system font — no download required
+*/
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 /* ============================================================
@@ -23,7 +55,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 300;
   line-height: 1.6;
   overflow-x: hidden;
@@ -55,6 +87,9 @@ header {
   color: var(--ink);
   text-decoration: none;
   letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 nav { display: flex; gap: 1.75rem; align-items: center; }
@@ -66,6 +101,11 @@ nav a {
   color: var(--mid);
   text-decoration: none;
   transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
 }
 
 nav a:hover { color: var(--accent); }
@@ -73,7 +113,7 @@ nav a:hover { color: var(--accent); }
 .nav-cta {
   background: var(--accent);
   color: white !important;
-  padding: 0.5rem 1.1rem;
+  padding: 0 1.1rem;
   border-radius: 8px;
   transition: background 0.2s, transform 0.15s !important;
 }
@@ -344,6 +384,25 @@ nav a:hover { color: var(--accent); }
 
 .location-map iframe { width: 100%; height: 100%; border: none; }
 
+.directions-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--terracotta);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+  margin-top: 0.75rem;
+}
+
+.directions-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 /* ============================================================
    CONTACT
 ============================================================ */
@@ -417,6 +476,16 @@ footer p { font-size: 0.75rem; color: var(--mid); line-height: 1.5; }
 
 .footer-credit { font-size: 0.72rem; color: var(--mid); text-decoration: none; }
 .footer-credit:hover { color: var(--accent); }
+
+.footer-gdpr {
+  font-size: 0.72rem;
+  color: var(--mid);
+  width: 100%;
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  margin-top: 0.5rem;
+}
 
 /* ============================================================
    ANIMATIONS

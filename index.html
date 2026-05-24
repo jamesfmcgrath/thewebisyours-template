@@ -1,3 +1,12 @@
+<!--
+  MAINTENANCE POLICY
+  Minor text changes (hours, phone, email, address) are covered
+  for 30 days after launch as part of The Web Is Yours campaign.
+  After 30 days the site is yours to maintain.
+  For help: hello@thewebisyours.org
+  To edit this file: open it in any text editor and search for
+  the content you want to change.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,11 +30,23 @@
   <title>The Harbour Bakery | Westport, Co. Mayo</title>
   <meta name="description" content="Fresh bread, pastries and coffee in the heart of Westport. Baked every morning since 2009.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<!-- =============================================
+  EASY EDITS — common changes start here
+  Business name:  search for "The Harbour Bakery"
+  Phone number:   search for "098 123 456"
+  Email address:  search for "hello@harbourbakery.ie"
+  Opening hours:  find the <ul class="hours-list">
+  Address:        find the <p class="location-address">
+  Directions URL: find the <a class="directions-link">
+  Services:       find the <div class="services-grid">
+  About text:     find the <div class="about-text">
+  Photo:          find the <div class="about-image">
+============================================= -->
 
   <header>
     <a class="site-name" href="#">The Harbour Bakery</a>
@@ -125,16 +146,9 @@
           Westport<br>
           Co. Mayo, F28 XY12
         </p>
-        <div class="location-map">
-          <!--
-            To add a Google Map:
-            1. Go to maps.google.com
-            2. Search for the business address
-            3. Click Share > Embed a map
-            4. Copy the iframe and paste it here
-          -->
-          <p style="font-size:0.8rem;color:var(--light);padding:2rem;text-align:center;">Add Google Maps embed here</p>
-        </div>
+        <a class="directions-link" href="https://maps.google.com/?q=12+Bridge+Street+Westport+Mayo+Ireland" target="_blank" rel="noopener">
+          Get Directions →
+        </a>
       </div>
 
     </div>
@@ -189,6 +203,7 @@
     <a class="footer-credit" href="https://thewebisyours.org" target="_blank" rel="noopener">
       A free website by The Web Is Yours
     </a>
+    <p class="footer-gdpr">This site does not collect personal data or use cookies.</p>
   </footer>
 
   <script src="js/script.js"></script>

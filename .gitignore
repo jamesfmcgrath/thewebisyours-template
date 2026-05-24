@@ -1,0 +1,10 @@
+# DDEV local dev environment
+.ddev/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
